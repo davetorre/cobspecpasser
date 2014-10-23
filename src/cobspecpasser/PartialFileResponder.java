@@ -19,7 +19,7 @@ public class PartialFileResponder extends FileResponder {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        content = Arrays.copyOfRange(content, range[0], range[1]);
+        content = Arrays.copyOfRange(content, range[0], (range[1] + 1));
 
         return content;
     }

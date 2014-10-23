@@ -42,7 +42,7 @@ public class PartialFileResponderTest {
 
     @Test
     public void testGetPartialFileContent() throws Exception {
-        int[] range = {3, 7};
+        int[] range = {3, 6};
         byte[] expected = "e co".getBytes();
         byte[] actual = responder.getPartialFileContent(range);
 
@@ -59,6 +59,6 @@ public class PartialFileResponderTest {
         HTTPResponse response = responder.respond(request);
 
         assertTrue(response.statusLine.equals("HTTP/1.1 206 Partial Content"));
-        assertTrue(Arrays.equals("Here c".getBytes(), response.body));
+        assertTrue(Arrays.equals("Here co".getBytes(), response.body));
     }
 }

@@ -9,7 +9,6 @@ public class Form {
 
     public synchronized void write(byte[] data) {
         String s = new String(data);
-        s = s.replace("=", " = ");
         contents = s.getBytes();
     }
 
